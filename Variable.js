@@ -7,6 +7,6 @@ let count = 1;
 
 btn.onclick = () => {
   btn.textContent = "Try again !!!";
-  tC.textContent = `${count} continue press`;
+  tC.textContent = `${count} Time Press`;
   count += 1;
 };
