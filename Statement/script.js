@@ -12,7 +12,7 @@
 
 const gender = prompt("Are you Mail");
 
-if (gender == "Yes") {
+if (gender === "m") {
   alert("You are Male");
 } else {
   alert("You are Female");
