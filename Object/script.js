@@ -27,5 +27,8 @@ const newEmali = (Nishan.Email_id = "mr.raiali323@gmail.com");
 console.log(newEmali);
 
 //delete
-const deleteName = delete Nishan.name();
+// const deleteName = delete Nishan.name();
 // console.log(deleteName);
+
+const { name, ...rest } = Nishan;
+console.log(rest);
