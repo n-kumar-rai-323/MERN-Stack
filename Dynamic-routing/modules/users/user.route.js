@@ -13,8 +13,33 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage })
-// const upload = multer({ dest: 'public/uploads/' })
 
+// RBACK (role based access control)
+
+const checkRole = (sysRoles)=>{
+    return (req, res, next)=>{
+        try{
+            const {roles: userRole = []} = req.headers; 
+            const isValidRole = sysRoles.some((role)=>userRole.includes(role));
+            if(!isValidRole) throw new Error("User unauthorized");
+            next();
+        }catch(e){
+            next(e)
+        }
+    }
+}
+
+router.get("/",checkRole(["admin"]),(req, res, next)=>{
+    try{
+        const valueOne = 45;
+        const valueTwo = 70;
+        const totalSum = valueOne + valueTwo
+
+    res.json({data : `The Total sum of ${totalSum}`})
+    }catch(e){
+        next(e);
+    }
+})
 router.post("/register", upload.single('profilePic'), (req, res, next) => {
     try {
         console.log({ pic: req.file })
