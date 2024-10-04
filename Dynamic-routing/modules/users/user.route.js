@@ -8,12 +8,23 @@ const storage = multer.diskStorage({
         cb(null, "public/uploads");
     },
     filename: function (req, file, cb) {
-        cb(null, Date.now() + "." + file.originalname.split(".")[1])
-    }
-})
+        cb(null, Date.now() + "." + file?.originalname.split(".")[1]);
+    },
+});
 
 const upload = multer({ storage })
 // const upload = multer({ dest: 'public/uploads/' })
+
+router.post("/register", upload.single('profilePic'), (req, res, next) => {
+    try {
+        console.log({ pic: req.file })
+        const URL = "http://localhost:7000/resources/uploads/";
+        const myPicture = URL + req?.file?.filename;
+        res.json({ data: `User Registered Successcully in url ${myPicture}` })
+    } catch (e) {
+        next(e)
+    }
+})
 
 const verify = (req, res, next) => {
     const role = req.headers.role;
@@ -27,16 +38,6 @@ const verify = (req, res, next) => {
 };
 
 
-router.post("/register", upload.single('profilePic'), (req, res, next) => {
-    try {
-        console.log({ pic: req.file })
-        const URL = "http://localhost:7000/resources/uploads/";
-        const myPicture = URL + req?.file?.filename
-        res.json({ data: `User Registered Successcully${myPicture}` })
-    } catch (e) {
-        next(e)
-    }
-})
 router.get("/", verify, (req, res, next) => {
     //query
 

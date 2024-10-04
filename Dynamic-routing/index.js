@@ -1,9 +1,12 @@
 require("dotenv").config();
 const express = require("express");
-const PORT = Number(process.env.PORT) || 8000
+const morgan = require('morgan')
 const app=express()
+
+const PORT = Number(process.env.PORT) || 8000
 const indexRoute = require("./routers")
 
+app.use(morgan('tiny'))
 app.use(express.json())
 app.use("/resources", express.static("public"))
 
