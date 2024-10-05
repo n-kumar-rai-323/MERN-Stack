@@ -1,6 +1,6 @@
 const router=require("express").Router();
 
-const roomRouter = require("../modules/rooms/user.route");
+const roomRouter = require("../modules/rooms/room.route");
 
 router.use("/rooms", roomRouter)
 
