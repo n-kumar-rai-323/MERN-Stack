@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const multer = require('multer')
-
+const userController = require("./user.controller")
 
 
 const storage = multer.diskStorage({
@@ -87,10 +87,11 @@ router.get("/:id", (req, res) => {
 });
 
 //Create
-router.post("/", (req, res) => {
+router.post("/", async(req, res) => {
     //body
-    console.log(req.body)
-    res.json({ data: "Hello from post users" })
+    const result = await userController.create(req.body);
+    // console.log(req.body)
+    res.json({ data:result, msg: "User created successfully" })
 });
 
 //Update
