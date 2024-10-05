@@ -87,11 +87,15 @@ router.get("/:id", (req, res) => {
 });
 
 //Create
-router.post("/", async(req, res) => {
+router.post("/", async(req, res, next) => {
     //body
+    try{
     const result = await userController.create(req.body);
     // console.log(req.body)
     res.json({ data:result, msg: "User created successfully" })
+    }catch(e){
+        next(e);
+    }
 });
 
 //Update
