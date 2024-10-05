@@ -24,6 +24,7 @@ const userSchema = new Schema({
         required:true, 
         default:true,
     },
+    image:String,
 
 },{ timestamps: true }
 );
