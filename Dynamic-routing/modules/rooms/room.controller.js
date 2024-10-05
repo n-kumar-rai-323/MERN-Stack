@@ -1,7 +1,7 @@
 const Modul = require("./room.model");
 //CRUD 
 
-//Create
+//list
 
 const create = async(payload) =>{
     return Modul.create(payload);
@@ -13,23 +13,30 @@ const list = async()=>{
     return Modul.find();
 };
 
-//2. Get BY Id 
-const getById = async(id) =>{
-    return Modul.findOne({_id: id});
+//2. Get BY room number
+const getById = async(roomNo) =>{
+    return Modul.findOne({number: roomNo});
 };
 
 //Update (POST, PATCH, PUT)
 //.1 Update Room Details 
-const updateById = async(id, payload)=>{
-    return Modul.updateOne({_id: id}, payload); //payload : {number : 1}
+const updateById = async(roomNo, payload)=>{
+    return Modul.updateOne({number: roomNo}, payload); //payload : {number : 1}
 };
 
 
 //2.Update status of room
-const updateStatus = async(id, payload)=>{}
+const updateStatus = async(roomNo)=>{
+    const room = await Modul.findOne({number: roomNo});
+    if(!room) throw new Error ("Room no found");
+    const {isFilled}= room;
+    return Modul.updateOne({number: roomNo}, {isFilled: !isFilled})
+}
 
 
 //Delete
-const remove = async(id)=>{}
+const remove = async(roomNo)=>{
+    return Modul.deleteOne({number: roomNo});
+}
 
 module.exports = {create, list, getById, updateById, updateStatus, remove}
