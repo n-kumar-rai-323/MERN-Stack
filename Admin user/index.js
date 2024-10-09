@@ -11,8 +11,11 @@ mongoose.connect('mongodb://localhost:27017/adminUser').then(()=>{
 console.log("Database is connect successfully")
 }).catch((e)=>{
     console.log("e")
-})
+});
+
+
 const indexRoute = require('./routers/index'); // Adjust the path if necessary
+
 app.use(morgan("tiny"))
 app.use(express.json())
 

@@ -32,4 +32,14 @@ router.post("/register", upload.single('image'), async(req,res,next)=>{
     }
 })
 
+
+router.post("/login", async (req, res, next) => {
+    try {
+        const result = await roomController.login(req.body);
+        res.json({ data: result, msg: `User logged in successfully` });
+    } catch (e) {
+        console.error(e); // Log the error for debugging
+        res.status(401).json({ error: e.message }); // Respond with a more informative error message
+    }
+});
 module.exports = router;
