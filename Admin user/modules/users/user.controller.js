@@ -30,6 +30,7 @@ const login = async (payload) => {
     const signData = {
         name: user?.name,
         email: user?.email,
+        isActive : user?.isActive
     }
     return genToken(signData)
 }

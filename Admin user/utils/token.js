@@ -1,4 +1,4 @@
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
 const genToken = (data) => {
     const expiresIn = process.env.JWT_DURATION || '1h'; // Default to 1 hour if not set
