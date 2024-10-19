@@ -1,0 +1,2 @@
+1. What is JavaScript ? 
+=> JavaScript (often abbreviated as JS) is a high-level versatile and widely-used programming language primarily known for its role in web development. it enables interactive and dynamic behavior on websites.   
