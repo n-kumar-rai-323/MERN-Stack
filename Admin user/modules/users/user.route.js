@@ -9,7 +9,7 @@ const storage = multer.diskStorage({
     filename: function(req,file,cb){
         cb(null, Date.now() +"." + file.originalname.split(".")[1]);
     }
-})
+});
 
 const upload = multer({storage});
 // router.post("/",async(req,res)=>{
