@@ -14,8 +14,7 @@ Object
 // 3. A date 
 
 
-const Null = null;
-console.log(Null)
-
-const unDefind = undefined
-console.log(unDefind)
+const num1=prompt("Enter You Are Number")
+const num2=prompt("Enter You Are Number")
+const sum = Number(num1) + Number(num2)
+const result = alert(`You'r sum is ${sum}`)
