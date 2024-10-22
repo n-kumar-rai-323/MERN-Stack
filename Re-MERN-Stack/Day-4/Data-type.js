@@ -7,6 +7,7 @@ null
 Symbol
 Object
 
+// complex data types 
 
 // The Object Data type
 // 1. An Object
