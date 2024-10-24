@@ -2,7 +2,7 @@
 const arr = [4,22,1,44,6,7]
 
 let largest= arr[0];
-console.log(largest)
+
 
 for(let i =0; i<arr.length; i++){
     if(arr[i] > largest){
