@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <div>
+            <label> Enter km value</label>
+            <input placeholder="Eg.1" id="kmValue">
+
+            <select id="firstDropdown" onchange="converter();return false;">
+                <option value="km">km</option>
+                <option value="m">m</option>
+            </select>
+
+        </div>
+        <br>
+        <div>
+            <label>Converted value</label>
+            <input placeholder="Eg:1000" id="mValue">
+
+            <select id="secondDropdown" onchange="converter();return false;">
+                <option value="km">km</option>
+                <option value="m">m</option>
+            </select>
+
+        </div>
+        <button type="button" onclick="converter(); return false;">Convert</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+
+</html>
