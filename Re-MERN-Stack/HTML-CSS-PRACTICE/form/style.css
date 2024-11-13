@@ -1,0 +1,24 @@
+/* p::before{
+    content: "Note:";
+    font-weight: bold;
+} */
+
+#section:target{
+    background-color: yellow;
+}
+
+p:lang(en){
+    font-style: italic;
+}
+
+input:optional{
+    border: 2px solid green;
+    border-radius: 5px;
+}
+.element {
+    background-color: lightyellow;
+  }
+  
+  .button:fullscreen {
+    background-color: lightpink;
+  }
