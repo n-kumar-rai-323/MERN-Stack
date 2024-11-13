@@ -21,3 +21,10 @@ const converter =()=>{
     document.getElementById("mValue").value = result;
 
 }
+
+const btn =document.querySelector("#btn")
+
+
+const message=()=>{
+    btn.value="hello"
+}
