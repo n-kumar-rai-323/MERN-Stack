@@ -19,6 +19,6 @@ input:optional{
     background-color: lightyellow;
   }
   
-  .button:fullscreen {
-    background-color: lightpink;
+.element:fullscreen {
+    background-color: rgb(167, 60, 76);
   }
