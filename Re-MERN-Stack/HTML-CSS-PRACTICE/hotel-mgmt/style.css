@@ -1,0 +1,9 @@
+.custom-class {
+    /* display: none; */
+  }
+@include media-breakpoint-down(md) {
+    .custom-class {
+      display: block;
+      background-color:red;
+    }
+  }
