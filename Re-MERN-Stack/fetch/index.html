@@ -3,9 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fetch Data Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            margin-right: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #output {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background: #f9f9f9;
+        }
+    </style>
 </head>
 <body>
-    <script src="index.js"></script>
+    <h1>Fetch Data Example with Default Parameters</h1>
+    <button onclick="fetchData()">Fetch Default Posts</button>
+    <button onclick="fetchData('https://jsonplaceholder.typicode.com/users')">Fetch Users</button>
+    <button onclick="fetchData('https://jsonplaceholder.typicode.com/comments')">Fetch Comments</button>
+
+    <div id="output">Data will appear here...</div>
+
+    <script>
+        // Function to fetch data with default parameters
+        const fetchData = async (url = "https://jsonplaceholder.typicode.com/posts", method = "GET") => {
+            const outputDiv = document.getElementById("output");
+            outputDiv.textContent = "Loading...";
+            
+            try {
+                const response = await fetch(url, { method });
+                if (!response.ok) {
+                    throw new Error(`Error: ${response.status}`);
+                }
+                const data = await response.json();
+                
+                // Display the data
+                outputDiv.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+            } catch (error) {
+                outputDiv.textContent = `Fetch error: ${error.message}`;
+            }
+        };
+    </script>
 </body>
 </html>
