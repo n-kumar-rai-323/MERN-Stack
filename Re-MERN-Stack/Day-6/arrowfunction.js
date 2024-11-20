@@ -1,3 +1,7 @@
+// Arrow functions, introduced in ES6, provide a concise syntax for
+//  writing functions in JavaScript. They are especially useful for writing
+//  shorter functions and for simplifying the handling of the this context.
+
 // Arrow function with Parameters . 
 const arowFun = (a,b)=>{
     console.log(a +b )
