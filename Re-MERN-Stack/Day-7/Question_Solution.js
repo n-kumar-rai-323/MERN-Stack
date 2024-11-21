@@ -9,3 +9,10 @@ const Data = (number)=>{
 
 const reverseNumber = Data(Number(userInput))
 console.log(reverseNumber)
+
+// Explanation:
+// num.toString(): Converts the number to a string.
+// .split(''): Splits the string into an array of characters.
+// .reverse(): Reverses the array.
+// .join(''): Joins the array back into a string.
+// parseInt(..., 10): Converts the reversed string back into a number.
