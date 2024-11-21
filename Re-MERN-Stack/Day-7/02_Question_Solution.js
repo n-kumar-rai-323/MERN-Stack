@@ -16,23 +16,6 @@
 // const count = checVowel("The quick brown fox");
 // console.log(count)
 
-// const data = prompt("Enter your data:");
-// const countVowels = (userInput) => {
-//     const vowels = "aeiouAEIOU";
-//     let vowelNumber = 0; // Changed to let to allow incrementing
-
-//     for (let char of userInput) {
-//         if (vowels.includes(char)) {
-//             vowelNumber++;
-//         }
-//     }
-
-//     return vowelNumber;
-// };
-
-// const result = countVowels(data);
-// console.log(`The number of vowels is: ${result}`);
-
 
 const countVowel=(inputString)=>{
     const vowels = 'aeiouAEIOU';
@@ -47,6 +30,6 @@ const countVowel=(inputString)=>{
 }
 
 // const iData = prompt("Enter your text");
-const exampleString = "The quick brown fox";
+const exampleString = "Nishan Kumar Rai";
 const vowelCount = countVowel(exampleString)
 console.log(vowelCount)
